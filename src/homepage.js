@@ -1,3 +1,5 @@
+import { newFormInput } from "../newFormInput"
+
 export function homepage() {
     console.log('Hey')
     const content = document.querySelector('#content')
@@ -9,18 +11,17 @@ export function homepage() {
         formTitle.textContent = 'Registration form:'
         formTitle.className = 'form-title'
 
-        const mail = document.createElement('div')
-        mail.className = 'mail-input'
-            const mailLabel = document.createElement('label')
-            mailLabel.for = 'mail'
-            mailLabel.textContent = 'Mail:'
+        const mail = newFormInput('mail')
+        const country = newFormInput('country')
+        const zipCode = newFormInput('zip-code')
+        const password = newFormInput('password')
+        const passwordConfirm = newFormInput ('password-confirm')
+        
+        const submit = document.createElement('button')
+        submit.id = 'submit'
+        submit.textContent = 'Register now'
 
-            const mailInput = document.createElement('input')
-            mailInput.type = 'text'
-            mailInput.id = 'mail-input'
-
-
-        form.append(formTitle, mail)
+        form.append(formTitle, mail, country, zipCode, password, passwordConfirm, submit)
 
     content.append(form)
 }
