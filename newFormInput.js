@@ -9,7 +9,15 @@ export function newFormInput(userInput) {
 
         const newInput = document.createElement('input')
         newInput.type = 'text'
+        /* newInput.type = 'mail'
+        newInput.required = true
+        newInput.minLength = '8' */
         newInput.id = userInput
-        inputContainer.append(inputLabel, newInput)
+        
+        const inputError = document.createElement('span')
+        inputError.className = 'error'
+        inputError.setAttribute('aria-live', 'polite')
+
+        inputContainer.append(inputLabel, newInput, inputError)
     return inputContainer
 }
