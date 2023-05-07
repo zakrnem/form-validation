@@ -7,13 +7,16 @@ body {
     background-color: #dce4e9;
     font-size: .9rem;
     font-family: sans-serif, serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #content {
     display: flex;
     justify-content: center;
-    height: 100vh;
     align-items: center;
+    flex: 1 0 auto;
 }
 
 #registration-form {
@@ -53,4 +56,28 @@ button {
     font-size: inherit;
     box-shadow: 5px 5px 5px rgb(178 178 178);
     font-family: inherit;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-weight: 300;
+}
+
+.github {
+    height: 1.5rem;
+    width:auto;
+    fill: white
+}
+
+.github:hover {
+    transform: rotate(720deg);
+    transition: transform 1.5s;
+    fill: white
 }

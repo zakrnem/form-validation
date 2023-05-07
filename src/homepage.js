@@ -1,4 +1,5 @@
 import { newFormInput } from "../newFormInput"
+import { footer } from "./footer"
 
 export function homepage() {
     console.log('Hey')
@@ -28,4 +29,5 @@ export function homepage() {
     
     form.append(formTitle, fieldset, submit)
     content.append(form)
+    footer()
 }
