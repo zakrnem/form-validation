@@ -1,21 +1,32 @@
 import { emailValidity } from "./mailValidity";
+import { countryValidity } from "./countryValidity";
 
 export function inputError() {
     const form = document.querySelector("form");
-    const email = document.getElementById("mail");
 
     window.addEventListener("load", () => {
         emailValidity()
+        countryValidity()
     });
 
-    email.addEventListener("input", () => {
-        emailValidity()
+    document.addEventListener("input", (e) => {
+        switch (true) {
+            case (e.target.id === 'mail'):
+                emailValidity()
+                break
+            case (e.target.id === 'country'):
+                countryValidity()
+                break
+        }
+        
     });
 
     form.addEventListener("submit", (event) => {
-        if (!emailValidity()) {
+        if (!emailValidity() &&
+        !countryValidity) {
             emailValidity()
-            event.preventDefault();
+            countryValidity()
+            event.preventDefault()
         }
     });
 }

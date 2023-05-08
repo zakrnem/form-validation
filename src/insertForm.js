@@ -1,4 +1,4 @@
-import { newFormInput } from "../newFormInput"
+import { newFormInput } from "./newFormInput"
 
 export function insertForm() {
     const content = document.querySelector('#content')
@@ -24,7 +24,7 @@ export function insertForm() {
             const password = newFormInput('password')
             const passwordConfirm = newFormInput ('password-confirm')
 
-        fieldset.append(mail/* , country, zipCode, password, passwordConfirm */)
+        fieldset.append(mail, country/*, zipCode, password, passwordConfirm */)
     
     form.append(formTitle, fieldset, submit)
     content.append(form)

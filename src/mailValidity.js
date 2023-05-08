@@ -2,17 +2,17 @@ export function emailValidity() {
     const email = document.getElementById("mail");
     const emailError = document.querySelector("#mail + span.error");
 
-    const mailValidity = false
+    let mailValidity = false
     const emailRegExp =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    const isValid = emailRegExp.test(email.value)
     const emailMinLength = 8
 
-    const isValid = emailRegExp.test(email.value);
         if (email.value.length === 0) {
             email.className = "invalid"
             showError('value-missing')
         }
-        if (!isValid) {
+        else if (!isValid) {
             email.className = "invalid"
             showError('type-mismatch')
         } 
