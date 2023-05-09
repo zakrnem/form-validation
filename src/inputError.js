@@ -1,5 +1,6 @@
 import { emailValidity } from "./mailValidity";
 import { countryValidity } from "./countryValidity";
+import { zipCodeValidity } from "./zipCodeValidity";
 
 export function inputError() {
     const form = document.querySelector("form");
@@ -7,6 +8,7 @@ export function inputError() {
     window.addEventListener("load", () => {
         emailValidity()
         countryValidity()
+        zipCodeValidity()
     });
 
     document.addEventListener("input", (e) => {
@@ -17,6 +19,15 @@ export function inputError() {
             case (e.target.id === 'country'):
                 countryValidity()
                 break
+            case (e.target.id === 'zip-code'):
+                zipCodeValidity()
+                break
+            case (e.target.id === 'password'):
+                passwordValidity()
+                break
+            case (e.target.id === 'password-confirm'):
+                passwordValidity()
+                break
         }
         
     });
@@ -26,6 +37,7 @@ export function inputError() {
         !countryValidity) {
             emailValidity()
             countryValidity()
+            zipCodeValidity()
             event.preventDefault()
         }
     });

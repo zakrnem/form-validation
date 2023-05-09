@@ -9,9 +9,6 @@ export function newFormInput(userInput) {
 
         const newInput = document.createElement('input')
         newInput.type = 'text'
-        /* newInput.type = 'mail'
-        newInput.required = true
-        newInput.minLength = '8' */
         newInput.id = userInput
         
         const inputError = document.createElement('span')
