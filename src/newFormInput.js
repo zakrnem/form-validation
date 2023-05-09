@@ -8,7 +8,7 @@ export function newFormInput(userInput) {
         inputLabel.textContent = inputText + ':'
 
         const newInput = document.createElement('input')
-        newInput.type = 'text'
+        newInput.type = userInput.includes('password') ? 'password' : 'text'
         newInput.id = userInput
         
         const inputError = document.createElement('span')

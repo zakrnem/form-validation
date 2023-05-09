@@ -43,7 +43,7 @@ body {
   flex-direction: column;
 }
 
-input[type="text"] {
+input {
     display: block;
     font-size: 90%;
     font-family: inherit;
